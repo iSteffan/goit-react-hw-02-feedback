@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
   state = {
@@ -57,7 +58,7 @@ countPositiveFeedbackPercentage = () => {
   render() {
     const { good, neutral, bad } = this.state;
     
-
+{/* <FeedbackOptions options={} onLeaveFeedback={}></FeedbackOptions> */ }
     return(
     <div>
         <div>
@@ -75,26 +76,8 @@ countPositiveFeedbackPercentage = () => {
             </li>
             </ul>
         </div >
-        <div>
-            <h2>Statistics</h2>
-            <ul>
-                    <li>
-              <p>Good: { good}</p>
-                    </li>
-                    <li>
-              <p>Neutral: { neutral}</p>
-                    </li>
-                    <li>
-              <p>Bad: { bad}</p>
-            </li>
-            <li>
-              <p>Total: { this.countTotalFeedback()}</p>
-            </li>
-             <li>
-              <p>Positive feedback: { this.countPositiveFeedbackPercentage()}%</p>
-                    </li>
-            </ul>
-        </div >
+        <Statistics good={good} neutral={neutral} bad={bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage() }>
+        </Statistics>
     </div >
   );
   }

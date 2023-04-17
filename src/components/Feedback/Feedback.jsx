@@ -1,7 +1,8 @@
 import { Component } from 'react';
 
 export class Feedback extends Component {
-
+{/* <FeedbackOptions options={} onLeaveFeedback={}></FeedbackOptions> */ }
+{/* <Statistics good={} neutral={} bad={} total={} positivePercentage={}></Statistics> */}
   render() {
     return(
     <div>
